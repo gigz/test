@@ -9,3 +9,6 @@ See modified diff: git diff
 See staged diff: git diff --staged
 Commit: git commit -m "Changelist description"
 Commit without staging: git commit -a
+View change history: git log
+View last 2 changes with diff: git log -p -2
+Undo local modification: git checkout -- <filename>
