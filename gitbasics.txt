@@ -1,7 +1,9 @@
 Clone a repository: git clone git://github.com/...
 Create a new repository from the current folder: git init
 Start tracking new file: git add
+Remove tracking of a file: git rm
 Stage changes to the file: git add
+Unstage changes: git reset
 See the status of the changes: git status
 See modified diff: git diff
 See staged diff: git diff --staged
