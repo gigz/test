@@ -1,6 +1,18 @@
 <?php
+    require_once('facebook/facebook.php');
+
     $userName = getName();
     updateCookie($userName);
+
+    // Create our Application instance (replace this with your appId and secret).
+    $facebook = new Facebook(array(
+        'appId'  => '430288226994015',
+  	'secret' => 'f10506c93391260892287bb49cfd1691',
+    ));
+
+    // Get User ID
+    $user = $facebook->getUser();
+
 ?>
 
 <html>
@@ -41,7 +53,7 @@
     
     sayHello($userName);
     echo '<br>';
-    echo $_SERVER['QUERY_STRING'];
+    echo 'Facebook ID: ' . $user;
    ?> 
   </body>
 </html>
