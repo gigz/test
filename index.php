@@ -1,18 +1,15 @@
 <?php
-    require_once('facebook/facebook.php');
-
-    $userName = getName();
-    updateCookie($userName);
+    require_once('userManager.php');
 
     // Create our Application instance (replace this with your appId and secret).
-    $facebook = new Facebook(array(
-        'appId'  => '430288226994015',
-  	'secret' => 'f10506c93391260892287bb49cfd1691',
-    ));
+    $userManager = new UserManager();
+ 
+    $facebookUserId = $userManager->getFacebookUserId();
 
-    // Get User ID
-    $user = $facebook->getUser();
-
+    if (!$facebookUserId)
+    {
+	header('Location: login.php');
+    }
 ?>
 
 <html>
@@ -53,7 +50,7 @@
     
     sayHello($userName);
     echo '<br>';
-    echo 'Facebook ID: ' . $user;
+    echo 'Facebook ID: ' . $facebookUserId;
    ?> 
   </body>
 </html>
